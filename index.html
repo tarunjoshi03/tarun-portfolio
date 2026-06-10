@@ -3,139 +3,127 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Tarun Joshi — Petroleum Engineer & Energy Analyst</title>
+<title>Tarun Joshi — Energy Finance & A&D Analytics</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0d1117;
-  --bg2:#111827;
-  --card:#0f1823;
-  --border:#1e2d3d;
-  --primary:#3b8ef3;
-  --accent:#06b6d4;
-  --fg:#f0f4ff;
-  --fg2:#94a3b8;
-  --fg3:#64748b;
-  --glow:0 0 40px rgba(59,142,243,0.18);
-  --glow-h:0 8px 60px rgba(59,142,243,0.32);
+  --bg:#0d1117;--bg2:#111827;--card:#0f1823;--border:#1e2d3d;
+  --primary:#3b8ef3;--accent:#06b6d4;--fg:#f0f4ff;--fg2:#94a3b8;--fg3:#64748b;
+  --glow:0 0 40px rgba(59,142,243,0.18);--glow-h:0 8px 60px rgba(59,142,243,0.32);
   --radius:14px;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--fg);overflow-x:hidden;line-height:1.6}
-
-/* ── CANVAS BG ── */
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:rgba(13,17,23,0.7);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,45,61,0.5)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:rgba(13,17,23,0.75);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,45,61,0.5)}
 .nav-logo{font-size:15px;font-weight:700;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.nav-links{display:flex;gap:2rem}
+.nav-links{display:flex;gap:1.75rem}
 .nav-links a{font-size:13px;color:var(--fg2);text-decoration:none;transition:color .2s;cursor:pointer}
 .nav-links a:hover{color:var(--fg)}
 .nav-theme{background:none;border:1px solid var(--border);color:var(--fg2);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-family:inherit;transition:all .2s}
 .nav-theme:hover{border-color:var(--primary);color:var(--primary)}
 
-/* ── LAYOUT ── */
+/* LAYOUT */
 main{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 2rem 6rem}
 
-/* ── HERO ── */
+/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:5rem}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,142,243,0.1);border:1px solid rgba(59,142,243,0.25);border-radius:20px;padding:6px 14px;font-size:12px;color:var(--primary);margin-bottom:1.5rem;width:fit-content}
 .hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(0.8)}}
-.hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:1rem;letter-spacing:-0.03em}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:1rem;letter-spacing:-.03em}
 .hero h1 .line1{display:block;color:var(--fg)}
 .hero h1 .line2{display:block;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-sub{font-size:16px;color:var(--fg2);max-width:560px;margin-bottom:2rem;line-height:1.75}
+.hero-sub{font-size:16px;color:var(--fg2);max-width:580px;margin-bottom:2rem;line-height:1.75}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:3rem}
 .btn-primary{background:linear-gradient(90deg,var(--primary),var(--accent));color:#0d1117;padding:12px 28px;border-radius:10px;font-weight:600;font-size:14px;border:none;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--glow-h)}
 .btn-ghost{background:transparent;color:var(--fg);padding:12px 28px;border-radius:10px;font-weight:600;font-size:14px;border:1px solid var(--border);cursor:pointer;font-family:inherit;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .btn-ghost:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
-.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap}
 .stat .n{font-size:24px;font-weight:800;background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat .l{font-size:12px;color:var(--fg3);margin-top:2px}
 
-/* ── SECTIONS ── */
+/* SECTIONS */
 section{padding:5rem 0}
 .sec-label{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:.75rem}
 .sec-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:2.5rem;letter-spacing:-.02em}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
 
-/* ── GLASS CARD ── */
+/* GLASS */
 .glass{background:rgba(15,24,35,0.7);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--glow);transition:transform .3s,box-shadow .3s,border-color .3s}
 .glass:hover{transform:translateY(-4px);box-shadow:var(--glow-h);border-color:rgba(59,142,243,0.3)}
 
-/* ── ABOUT ── */
+/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.about-text{font-size:15px;color:var(--fg2);line-height:1.8;padding:1.75rem;border-radius:var(--radius)}
-.highlight-item{padding:1.25rem 1.5rem;border-radius:var(--radius);display:flex;align-items:center;gap:14px}
+.about-text{font-size:15px;color:var(--fg2);line-height:1.8;padding:1.75rem}
+.highlight-item{padding:1.25rem 1.5rem;display:flex;align-items:center;gap:14px}
 .hi-icon{width:40px;height:40px;border-radius:10px;background:rgba(59,142,243,0.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .hi-name{font-size:13px;font-weight:600;margin-bottom:2px}
 .hi-sub{font-size:12px;color:var(--fg3)}
 
-/* ── EXPERIENCE ── */
+/* CARDS */
 .exp-list{display:flex;flex-direction:column;gap:1rem}
-.exp-card{padding:1.5rem 1.75rem;border-radius:var(--radius)}
+.exp-card{padding:1.5rem 1.75rem}
 .exp-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.35rem;gap:1rem}
 .exp-role{font-size:15px;font-weight:700}
-.exp-period{font-size:11px;color:var(--fg3);white-space:nowrap;background:rgba(59,142,243,0.08);padding:4px 10px;border-radius:20px;border:1px solid rgba(59,142,243,0.15)}
+.exp-period{font-size:11px;color:var(--fg3);white-space:nowrap;background:rgba(59,142,243,0.08);padding:4px 10px;border-radius:20px;border:1px solid rgba(59,142,243,0.15);flex-shrink:0}
 .exp-co{font-size:13px;color:var(--primary);margin-bottom:.65rem;font-weight:600}
 .exp-desc{font-size:13px;color:var(--fg2);line-height:1.7;margin-bottom:.9rem}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{font-size:11px;padding:4px 10px;border-radius:20px;background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.2);color:var(--accent)}
+.gh-link{font-size:11px;color:var(--primary);text-decoration:none;border:1px solid rgba(59,142,243,0.3);padding:4px 10px;border-radius:20px;white-space:nowrap;transition:all .2s}
+.gh-link:hover{background:rgba(59,142,243,0.1)}
 
-/* ── SKILLS ── */
+/* SKILLS */
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.skill-group{padding:1.5rem;border-radius:var(--radius)}
+.skill-group{padding:1.5rem}
 .sg-title{font-size:13px;font-weight:700;margin-bottom:1rem;color:var(--fg);display:flex;align-items:center;gap:8px}
-.sg-icon{font-size:16px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
 .skill-tag{font-size:12px;padding:5px 12px;border-radius:8px;background:rgba(30,45,61,0.8);border:1px solid var(--border);color:var(--fg2);transition:all .2s;cursor:default}
 .skill-tag:hover{background:rgba(59,142,243,0.15);border-color:rgba(59,142,243,0.4);color:var(--primary);transform:scale(1.05)}
 
-/* ── EDUCATION ── */
+/* EDUCATION */
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.edu-card{padding:1.5rem;border-radius:var(--radius)}
+.edu-card{padding:1.5rem}
 .edu-card.featured{border-color:rgba(59,142,243,0.4)!important}
 .edu-deg{font-size:14px;font-weight:700;margin-bottom:4px}
 .edu-school{font-size:13px;color:var(--primary);font-weight:600;margin-bottom:4px}
 .edu-period{font-size:12px;color:var(--fg3);margin-bottom:.75rem}
+.edu-badges{display:flex;flex-wrap:wrap;gap:6px}
 .edu-badge{display:inline-block;background:rgba(59,142,243,0.1);border:1px solid rgba(59,142,243,0.25);color:var(--primary);font-size:11px;padding:4px 10px;border-radius:20px}
 
-/* ── CERTS ── */
+/* CERTS */
 .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:1rem}
 .cert{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(15,24,35,0.6);border:1px solid var(--border);border-radius:10px;font-size:12px;color:var(--fg2)}
 .cert-dot{width:6px;height:6px;border-radius:50%;background:linear-gradient(90deg,var(--primary),var(--accent));flex-shrink:0}
 
-/* ── CONTACT ── */
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.contact-card{padding:1.25rem 1.5rem;border-radius:var(--radius);display:flex;align-items:center;gap:14px}
+.contact-card{padding:1.25rem 1.5rem;display:flex;align-items:center;gap:14px}
 .cc-icon{width:44px;height:44px;border-radius:10px;background:rgba(59,142,243,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
 .cc-label{font-size:11px;color:var(--fg3);margin-bottom:2px}
 .cc-val{font-size:13px;font-weight:600}
 
-/* ── FADE IN ── */
+/* FADE */
 .fi{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .fi.vis{opacity:1;transform:translateY(0)}
 .fi-l{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease}
 .fi-l.vis{opacity:1;transform:translateX(0)}
 
-/* ── TYPEWRITER ── */
+/* TYPEWRITER */
 .tw-cursor{display:inline-block;width:3px;height:1em;background:var(--accent);margin-left:4px;vertical-align:-.1em;animation:blink .7s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
-/* ── DIVIDER ── */
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0}
-
-/* scrollbar */
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
 </style>
 </head>
 <body>
-
 <canvas id="bg-canvas"></canvas>
 
 <nav>
@@ -143,6 +131,7 @@ section{padding:5rem 0}
   <div class="nav-links">
     <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
     <a onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">Experience</a>
+    <a onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</a>
     <a onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</a>
     <a onclick="document.getElementById('education').scrollIntoView({behavior:'smooth'})">Education</a>
     <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</a>
@@ -153,22 +142,33 @@ section{padding:5rem 0}
 <main>
   <!-- HERO -->
   <div class="hero">
-    <img src="photo.jpg" style="width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid rgba(59,142,243,0.4);box-shadow:0 0 40px rgba(59,142,243,0.25);margin-bottom:1.5rem;display:block"/>
-    <div class="hero-badge fi"><span></span> Open to opportunities</div>
-    <h1 class="fi">
-      <span class="line1">Tarun Joshi</span>
-      <span class="line2" id="tw-line">Petroleum Engineer</span><span class="tw-cursor"></span>
-    </h1>
-    <p class="hero-sub fi">MEng Petroleum Engineering · Texas A&M University. Bridging subsurface diagnostics, large-scale energy analytics, and investment evaluation - from wellbore to portfolio.</p>
-    <div class="hero-actions fi">
-      <a href="mailto:tarunjoshi359@gmail.com" class="btn-primary">✉ Get in touch</a>
-      <a href="https://www.linkedin.com/in/tarunjoshi03" target="_blank" class="btn-ghost">↗ LinkedIn</a>
+    <div style="display:flex;align-items:center;gap:3rem;flex-wrap:wrap">
+      <div style="flex:1;min-width:280px">
+        <div class="hero-badge fi"><span></span> Open to A&D · Equity Research · Upstream Finance</div>
+        <h1 class="fi">
+          <span class="line1">Tarun Joshi</span>
+          <span class="line2" id="tw-line">Energy Finance</span><span class="tw-cursor"></span>
+        </h1>
+        <p class="hero-sub fi">MEng Petroleum Engineering · Texas A&M, 2025. Buy-side upstream M&A experience across Permian, Eagle Ford & Haynesville. Building Python-driven A&D and equity research workflows at the intersection of subsurface and finance.</p>
+        <div class="hero-actions fi">
+          <a href="mailto:tarunjoshi359@gmail.com" class="btn-primary">✉ Get in touch</a>
+          <a href="https://www.linkedin.com/in/tarunjoshi03" target="_blank" class="btn-ghost">↗ LinkedIn</a>
+          <a href="https://github.com/tarunjoshi03" target="_blank" class="btn-ghost">↗ GitHub</a>
+        </div>
+      </div>
+      <div class="fi" style="flex-shrink:0">
+        <div style="width:200px;height:200px;border-radius:50%;border:2px solid rgba(59,142,243,0.4);padding:4px;box-shadow:0 0 40px rgba(59,142,243,0.25)">
+          <img src="photo.jpg"
+               onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#3b8ef3,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:800;color:#0d1117\'>TJ</div>'"
+               style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top" alt="Tarun Joshi"/>
+        </div>
+      </div>
     </div>
-    <div class="hero-stats fi">
-      <div class="stat"><div class="n">6+</div><div class="l">Years experience</div></div>
-      <div class="stat"><div class="n">150+</div><div class="l">Wells analyzed</div></div>
+    <div class="hero-stats fi" style="margin-top:2.5rem">
       <div class="stat"><div class="n">$1B+</div><div class="l">Assets evaluated</div></div>
-      <div class="stat"><div class="n">3</div><div class="l">Countries worked</div></div>
+      <div class="stat"><div class="n">150+</div><div class="l">Wells analyzed</div></div>
+      <div class="stat"><div class="n">5</div><div class="l">Open-source models</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Basins covered</div></div>
     </div>
   </div>
 
@@ -180,14 +180,15 @@ section{padding:5rem 0}
     <div class="sec-title fi">Who I am</div>
     <div class="about-grid">
       <div class="glass about-text fi-l">
-        Petroleum Engineering graduate from Texas A&M with hands-on field and analytical experience across drilling, completions, and unconventional reservoir diagnostics. My work connects rig-floor operations and pressure diagnostics with Python-driven data workflows and energy market analysis.<br><br>
-        At Databricks I built models over multi-terabyte upstream, midstream, and power datasets. At Stronghold Investment Management I evaluated $1B+ in U.S. shale assets. Currently conducting DFIT research at Texas A&M, targeting improved EUR prediction in unconventional reservoirs.
+        I'm a petroleum engineer turned energy finance analyst — with the technical depth to evaluate what's actually in the ground and the financial toolkit to price it.<br><br>
+        At <strong style="color:var(--fg)">Stronghold Investment Management</strong>, I screened and diligenced upstream U.S. shale assets across the Permian, Eagle Ford, and Haynesville — running DCA, type curves, and EUR distributions for $1B+ in potential deal value. At <strong style="color:var(--fg)">Databricks</strong>, I built Python & SQL pipelines over multi-terabyte energy datasets informing commodity outlooks and transition scenario models.<br><br>
+        Currently advancing DFIT pressure diagnostics research at Texas A&M while building an open-source A&D and equity research toolkit on GitHub — NAV models, deal teardowns, and petrophysical workflows sourced from real SEC filings and public well data.
       </div>
       <div style="display:flex;flex-direction:column;gap:10px">
-        <div class="glass highlight-item fi"><div class="hi-icon">🎓</div><div><div class="hi-name">Texas A&M University</div><div class="hi-sub">MS Petroleum Engineering, 2025</div></div></div>
-        <div class="glass highlight-item fi"><div class="hi-icon">📊</div><div><div class="hi-name">Energy Analytics</div><div class="hi-sub">Python · SQL · Databricks · Power BI</div></div></div>
-        <div class="glass highlight-item fi"><div class="hi-icon">💰</div><div><div class="hi-name">Investment Evaluation</div><div class="hi-sub">DCA · EUR · Asset Valuation · Screening</div></div></div>
-        <div class="glass highlight-item fi"><div class="hi-icon">🏆</div><div><div class="hi-name">Patrick A. Graham Fellowship</div><div class="hi-sub">Non-Resident Scholarship · Global Aggie Medallion</div></div></div>
+        <div class="glass highlight-item fi"><div class="hi-icon">💼</div><div><div class="hi-name">Buy-Side Upstream M&A</div><div class="hi-sub">Permian · Eagle Ford · Haynesville · $1B+ evaluated</div></div></div>
+        <div class="glass highlight-item fi"><div class="hi-icon">📊</div><div><div class="hi-name">A&D & Equity Research Models</div><div class="hi-sub">DCF · NAV · DCA · IRR Sensitivity · Type Curves</div></div></div>
+        <div class="glass highlight-item fi"><div class="hi-icon">🛢️</div><div><div class="hi-name">Subsurface Technical Edge</div><div class="hi-sub">DFIT · Reservoir Simulation · Seismic · Petrophysics</div></div></div>
+        <div class="glass highlight-item fi"><div class="hi-icon">🏆</div><div><div class="hi-name">Texas A&M · MEng 2025</div><div class="hi-sub">Patrick A. Graham Fellowship · Global Aggie Medallion</div></div></div>
       </div>
     </div>
   </section>
@@ -201,45 +202,91 @@ section{padding:5rem 0}
     <div class="exp-list">
 
       <div class="glass exp-card fi">
-        <div class="exp-top"><div class="exp-role">Researcher — DFIT &amp; Unconventional Diagnostics</div><div class="exp-period">Aug 2025 – Present</div></div>
-        <div class="exp-co">Harold Vance Dept. of Petroleum Engineering · Texas A&amp;M</div>
-        <div class="exp-desc">Field-scale DFIT analysis on 20+ unconventional wells using G-function and pressure derivative diagnostics to quantify fracture closure, formation permeability, and leakoff. Built Python workflows reducing interpretation turnaround ~35%. Authored SPE-style reports for academic and industry audiences.</div>
-        <div class="tags"><span class="tag">DFIT Analysis</span><span class="tag">Python</span><span class="tag">Geomechanics</span><span class="tag">Pressure Diagnostics</span><span class="tag">SPE Reports</span></div>
+        <div class="exp-top"><div class="exp-role">Researcher — Unconventional Reservoir Diagnostics</div><div class="exp-period">Aug 2025 – Present</div></div>
+        <div class="exp-co">Harold Vance Dept. of Petroleum Engineering · Texas A&M University</div>
+        <div class="exp-desc">Field-scale DFIT analysis on 20+ unconventional wells using G-function and pressure derivative diagnostics to quantify fracture closure, formation permeability, and leakoff. Built Python-based workflows reducing interpretation turnaround ~35%. Findings directly inform completion design and EUR prediction frameworks.</div>
+        <div class="tags"><span class="tag">DFIT Analysis</span><span class="tag">Python</span><span class="tag">Geomechanics</span><span class="tag">EUR Prediction</span><span class="tag">SPE Reports</span></div>
       </div>
 
       <div class="glass exp-card fi">
         <div class="exp-top"><div class="exp-role">Energy Analyst</div><div class="exp-period">May – Dec 2024</div></div>
         <div class="exp-co">Databricks · Houston, TX</div>
-        <div class="exp-desc">Built Python &amp; SQL analytical models on the Databricks Lakehouse platform evaluating upstream, midstream, and renewables trends across multi-terabyte datasets. Designed ETL pipelines reducing processing time ~40%. Developed Power BI dashboards adopted by commercial, trading, and sustainability teams for weekly decision-making.</div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">Power BI</span><span class="tag">ETL</span><span class="tag">Bloomberg / EIA</span></div>
+        <div class="exp-desc">Built Python & SQL analytical models on the Databricks Lakehouse platform evaluating upstream, midstream, and renewables production trends across multi-terabyte datasets (EIA, Bloomberg, proprietary operator feeds). Designed ETL pipelines reducing processing time ~40%. Developed Power BI dashboards tracking upstream KPIs and energy transition metrics adopted by commercial, trading, and sustainability teams.</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Databricks</span><span class="tag">Power BI</span><span class="tag">Bloomberg / EIA</span><span class="tag">Energy Transition</span></div>
       </div>
 
       <div class="glass exp-card fi">
-        <div class="exp-top"><div class="exp-role">Student Assistant — Drilling, Well Testing &amp; Reservoir Modeling</div><div class="exp-period">Feb 2023 – May 2025</div></div>
-        <div class="exp-co">Harold Vance Dept. of Petroleum Engineering · Texas A&amp;M</div>
-        <div class="exp-desc">Technical instruction across PETE 225, PETE 325, and PETE 404 — drilling hydraulics, pressure transient analysis, CMG/Petrel reservoir simulation, and integrated asset economics. Mentored 100+ students across 25+ structured lab sessions.</div>
-        <div class="tags"><span class="tag">Drilling</span><span class="tag">Well Testing</span><span class="tag">CMG / Petrel</span><span class="tag">Reservoir Modeling</span></div>
-      </div>
-
-      <div class="glass exp-card fi">
-        <div class="exp-top"><div class="exp-role">Petroleum Engineer</div><div class="exp-period">Aug 2021 – Jul 2022</div></div>
+        <div class="exp-top"><div class="exp-role">Petroleum Engineer — Buy-Side Upstream M&A</div><div class="exp-period">Aug 2021 – Jul 2022</div></div>
         <div class="exp-co">Stronghold Investment Management · Bengaluru, India</div>
-        <div class="exp-desc">Reservoir and production evaluations across 8+ U.S. shale assets (Permian, Eagle Ford, Haynesville). DCA, type curve generation, and EUR forecasting for 150+ wells. Technical databases for $500M+ in assets supporting 4+ acquisitions totaling $1B+.</div>
-        <div class="tags"><span class="tag">DCA / EUR</span><span class="tag">Permian / Eagle Ford</span><span class="tag">Asset Valuation</span><span class="tag">Investment Screening</span></div>
+        <div class="exp-desc">Screened and diligenced 8+ onshore U.S. shale assets across the Permian, Eagle Ford, and Haynesville basins. Ran DCA, type curve generation, and EUR forecasting for 150+ unconventional wells. Evaluated operator development strategies and built technical databases for $500M+ in assets, supporting 4+ acquisition opportunities totaling over $1B in potential deal value.</div>
+        <div class="tags"><span class="tag">Buy-Side M&A</span><span class="tag">DCA / EUR</span><span class="tag">Permian / Eagle Ford</span><span class="tag">Asset Valuation</span><span class="tag">Investment Screening</span><span class="tag">ComboCurve</span></div>
+      </div>
+
+      <div class="glass exp-card fi">
+        <div class="exp-top"><div class="exp-role">Student Assistant — Drilling, Well Testing & Reservoir Modeling</div><div class="exp-period">Feb 2023 – May 2025</div></div>
+        <div class="exp-co">Harold Vance Dept. of Petroleum Engineering · Texas A&M University</div>
+        <div class="exp-desc">Technical instruction across PETE 225, PETE 325, and PETE 404 covering drilling hydraulics, pressure transient analysis, CMG/Petrel reservoir simulation, and integrated asset economic evaluation. Mentored 100+ students across 25+ structured lab sessions.</div>
+        <div class="tags"><span class="tag">Well Testing</span><span class="tag">CMG / Petrel</span><span class="tag">Reservoir Modeling</span><span class="tag">Asset Economics</span></div>
       </div>
 
       <div class="glass exp-card fi">
         <div class="exp-top"><div class="exp-role">Drilling Engineer Intern</div><div class="exp-period">Jun – Aug 2020</div></div>
         <div class="exp-co">Knnamp Enterprise · Mumbai, India</div>
-        <div class="exp-desc">Real-time drilling fluid monitoring across 3+ onshore wells. Tracked and adjusted mud weight, PV, YP, gel strength, and filtration loss. Coordinated fluid sequencing ahead of 5+ casing runs and cement jobs.</div>
-        <div class="tags"><span class="tag">Drilling Fluids</span><span class="tag">Wellbore Stability</span><span class="tag">Casing &amp; Cementing</span></div>
+        <div class="exp-desc">Real-time drilling fluid monitoring across 3+ active onshore wells. Tracked mud weight, PV, YP, gel strength, and filtration loss. Coordinated fluid sequencing ahead of 5+ casing runs and cement jobs.</div>
+        <div class="tags"><span class="tag">Drilling Fluids</span><span class="tag">Wellbore Stability</span><span class="tag">Onshore Operations</span></div>
       </div>
 
       <div class="glass exp-card fi">
-        <div class="exp-top"><div class="exp-role">Drilling &amp; Completion Engineer Intern</div><div class="exp-period">Dec 2019 – Jan 2020</div></div>
-        <div class="exp-co">Reliance Industries Limited · Kakinada, India</div>
-        <div class="exp-desc">12-hour rotational shifts on active wells in the KG-D6 deepwater block (700–1,700m). BHA selection, DDR monitoring, torque &amp; drag analysis, post-well performance benchmarking.</div>
-        <div class="tags"><span class="tag">Deepwater</span><span class="tag">BHA Selection</span><span class="tag">KG-D6 Block</span><span class="tag">Well Barriers</span></div>
+        <div class="exp-top"><div class="exp-role">Drilling & Completion Engineer Intern</div><div class="exp-period">Dec 2019 – Jan 2020</div></div>
+        <div class="exp-co">Reliance Industries Limited · KG-D6 Block, Kakinada</div>
+        <div class="exp-desc">12-hour rotational shifts on active deepwater wells in the KG-D6 block (700–1,700m water depth). BHA selection, DDR monitoring, torque & drag analysis, and post-well performance benchmarking.</div>
+        <div class="tags"><span class="tag">Deepwater</span><span class="tag">KG-D6</span><span class="tag">BHA Selection</span><span class="tag">Well Barriers</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="sec-label fi">Projects</div>
+    <div class="sec-title fi">Open-source models & research</div>
+    <div class="exp-list">
+
+      <div class="glass exp-card fi">
+        <div class="exp-top"><div class="exp-role">💰 PR/APA A&D Deal Teardown</div><a href="https://github.com/tarunjoshi03/pr-apa-deal-teardown" target="_blank" class="gh-link">↗ GitHub</a></div>
+        <div class="exp-co">Upstream A&D Economics · Permian Resources $608MM Northern Delaware Basin Acquisition</div>
+        <div class="exp-desc">Full buy-side diligence workflow on PR's acquisition of APA's Northern Delaware Basin assets. Built Arps decline curves, IRR sensitivity heatmap, and 20-year DCF model sourced directly from SEC 10-K filings. Mirrors the institutional A&D screening process — from production data to $/acre implied valuation.</div>
+        <div class="tags"><span class="tag">DCF</span><span class="tag">IRR Sensitivity</span><span class="tag">Arps DCA</span><span class="tag">SEC 10-K</span><span class="tag">scipy</span><span class="tag">pandas</span><span class="tag">matplotlib</span></div>
+      </div>
+
+      <div class="glass exp-card fi">
+        <div class="exp-top"><div class="exp-role">📈 MTDR Upstream NAV Model</div><a href="https://github.com/tarunjoshi03/mtdr-nav-model" target="_blank" class="gh-link">↗ GitHub</a></div>
+        <div class="exp-co">Equity Research · Matador Resources (MTDR) · FY2025 10-K</div>
+        <div class="exp-desc">Upstream Net Asset Value model for Matador Resources built from FY2025 10-K filings. Arps decline curve fitting, type curve generation, and multi-variable sensitivity analysis across commodity price and cost assumptions — the core building block of upstream equity research and reserves-based lending.</div>
+        <div class="tags"><span class="tag">NAV Model</span><span class="tag">Arps DCA</span><span class="tag">Type Curves</span><span class="tag">Sensitivity Analysis</span><span class="tag">Equity Research</span><span class="tag">Python</span></div>
+      </div>
+
+      <div class="glass exp-card fi">
+        <div class="exp-top"><div class="exp-role">⚡ Kansas Well Petrophysics</div><a href="https://github.com/tarunjoshi03/kansas-well-petrophysics" target="_blank" class="gh-link">↗ GitHub</a></div>
+        <div class="exp-co">Formation Evaluation · KGS Public Well Database</div>
+        <div class="exp-desc">Petrophysical formation evaluation on real KGS well data. Computed Vshale, effective porosity (PHIE), and water saturation via Archie's equation. Automated net pay flagging with cutoff logic — the subsurface foundation for reserves classification and asset screening.</div>
+        <div class="tags"><span class="tag">Petrophysics</span><span class="tag">LAS Logs</span><span class="tag">Archie Equation</span><span class="tag">Net Pay</span><span class="tag">lasio</span><span class="tag">numpy</span></div>
+      </div>
+
+      <div class="glass exp-card fi">
+        <div class="exp-top"><div class="exp-role">🗺️ Stratton Field 3D Seismic Analysis</div><a href="https://github.com/tarunjoshi03/stratton-seismic-analysis" target="_blank" class="gh-link">↗ GitHub</a></div>
+        <div class="exp-co">3D Seismic Interpretation · South Texas Frio Formation Gas Reservoir</div>
+        <div class="exp-desc">3D seismic interpretation and well-to-seismic tie on the Stratton Field Frio Formation gas reservoir. Horizon picking, amplitude extraction, and synthetic seismogram generation — subsurface skills directly applicable to prospect evaluation and resource derisking in A&D workflows.</div>
+        <div class="tags"><span class="tag">3D Seismic</span><span class="tag">Horizon Picking</span><span class="tag">Well Tie</span><span class="tag">segyio</span><span class="tag">matplotlib</span></div>
+      </div>
+
+      <div class="glass exp-card fi">
+        <div class="exp-top"><div class="exp-role">🌊 Atlantic Seismic Terminations</div><a href="https://github.com/tarunjoshi03/atlantic-seismic-terminations" target="_blank" class="gh-link">↗ GitHub</a></div>
+        <div class="exp-co">Automated Horizon Tracking · USGS 2D Marine Seismic · Atlantic Margin</div>
+        <div class="exp-desc">Automated horizon tracking and stratigraphic termination detection on USGS 2D marine seismic data. Implemented Mitchum, Vail & Sangree (1977) sequence stratigraphy framework to identify onlap, downlap, truncation, and erosional unconformities — key inputs for frontier basin exploration and resource prospectivity.</div>
+        <div class="tags"><span class="tag">2D Seismic</span><span class="tag">Sequence Stratigraphy</span><span class="tag">Horizon Tracking</span><span class="tag">segyio</span><span class="tag">scipy</span></div>
       </div>
 
     </div>
@@ -253,24 +300,26 @@ section{padding:5rem 0}
     <div class="sec-title fi">What I work with</div>
     <div class="skills-grid">
       <div class="glass skill-group fi">
-        <div class="sg-title"><span class="sg-icon">⚙️</span> Engineering &amp; Technical</div>
+        <div class="sg-title">💼 Finance & Investment</div>
         <div class="skill-tags">
-          <span class="skill-tag">DFIT / Pressure Diagnostics</span>
-          <span class="skill-tag">Reservoir Simulation (CMG)</span>
-          <span class="skill-tag">Petrel</span><span class="skill-tag">ResFrac</span>
-          <span class="skill-tag">Drilling Hydraulics</span>
+          <span class="skill-tag">DCF Modeling</span>
+          <span class="skill-tag">NAV / Reserves Valuation</span>
+          <span class="skill-tag">3-Statement Modeling</span>
           <span class="skill-tag">Decline Curve Analysis</span>
-          <span class="skill-tag">Well Testing</span>
-          <span class="skill-tag">ComboCurve</span>
-          <span class="skill-tag">Nodal Analysis</span>
-          <span class="skill-tag">IWCF Certified</span>
+          <span class="skill-tag">IRR / Sensitivity Analysis</span>
+          <span class="skill-tag">Asset Screening</span>
+          <span class="skill-tag">Petroleum Economics</span>
+          <span class="skill-tag">PHDwin · ARIES</span>
+          <span class="skill-tag">ComboCurve · Enverus</span>
         </div>
       </div>
       <div class="glass skill-group fi">
-        <div class="sg-title"><span class="sg-icon">📊</span> Data &amp; Analytics</div>
+        <div class="sg-title">📊 Data & Analytics</div>
         <div class="skill-tags">
-          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
-          <span class="skill-tag">Databricks</span><span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Databricks</span>
+          <span class="skill-tag">Power BI</span>
           <span class="skill-tag">Spotfire / Tableau</span>
           <span class="skill-tag">ETL Pipelines</span>
           <span class="skill-tag">Bloomberg / EIA</span>
@@ -278,19 +327,20 @@ section{padding:5rem 0}
         </div>
       </div>
       <div class="glass skill-group fi">
-        <div class="sg-title"><span class="sg-icon">💼</span> Finance &amp; Investment</div>
+        <div class="sg-title">⚙️ Subsurface & Engineering</div>
         <div class="skill-tags">
-          <span class="skill-tag">Asset Valuation</span>
-          <span class="skill-tag">EUR Forecasting</span>
-          <span class="skill-tag">Investment Screening</span>
-          <span class="skill-tag">Scenario Analysis</span>
-          <span class="skill-tag">Petroleum Economics</span>
-          <span class="skill-tag">3-Statement Modeling</span>
-          <span class="skill-tag">DCF Valuation</span>
+          <span class="skill-tag">DFIT / Pressure Diagnostics</span>
+          <span class="skill-tag">Reservoir Simulation (CMG)</span>
+          <span class="skill-tag">Petrel</span>
+          <span class="skill-tag">ResFrac</span>
+          <span class="skill-tag">Seismic Interpretation</span>
+          <span class="skill-tag">Petrophysics</span>
+          <span class="skill-tag">Well Testing</span>
+          <span class="skill-tag">IWCF Certified</span>
         </div>
       </div>
       <div class="glass skill-group fi">
-        <div class="sg-title"><span class="sg-icon">🌐</span> Languages</div>
+        <div class="sg-title">🌐 Languages</div>
         <div class="skill-tags">
           <span class="skill-tag">English (Full Professional)</span>
           <span class="skill-tag">Hindi (Full Professional)</span>
@@ -311,16 +361,21 @@ section{padding:5rem 0}
         <div class="edu-deg">Master of Engineering — Petroleum Engineering</div>
         <div class="edu-school">Texas A&amp;M University</div>
         <div class="edu-period">Aug 2022 – May 2025 · College Station, TX</div>
-        <span class="edu-badge">Patrick A. Graham '86 Fellowship</span>
-        <span class="edu-badge">Non-Resident Competitive Scholarship</span>
-        <span class="edu-badge">Graduate Program Fellowship</span>
-        <span class="edu-badge">Global Aggie Medallion</span>
+        <div class="edu-badges">
+          <span class="edu-badge">Patrick A. Graham '86 Fellowship</span>
+          <span class="edu-badge">Non-Resident Competitive Scholarship</span>
+          <span class="edu-badge">Global Aggie Medallion</span>
+          <span class="edu-badge">Graduate Program Fellowship</span>
+        </div>
       </div>
       <div class="glass edu-card">
         <div class="edu-deg">Bachelor of Technology — Petroleum Engineering</div>
         <div class="edu-school">Pandit Deendayal Energy University</div>
         <div class="edu-period">Jul 2017 – Jul 2021 · Gandhinagar, India</div>
-        <span class="edu-badge">IWCF Certification</span>
+        <div class="edu-badges">
+          <span class="edu-badge">IWCF Certified</span>
+          <span class="edu-badge">KG-D6 Deepwater Fieldwork</span>
+        </div>
       </div>
     </div>
     <div style="margin-top:1.5rem">
@@ -351,123 +406,44 @@ section{padding:5rem 0}
         <div><div class="cc-label">LinkedIn</div><div class="cc-val">linkedin.com/in/tarunjoshi03</div></div>
       </div>
       <div class="glass contact-card">
-        <div class="cc-icon">📞</div>
-        <div><div class="cc-label">Phone</div><div class="cc-val">+1 (979) 344-9262</div></div>
+        <div class="cc-icon">🐙</div>
+        <div><div class="cc-label">GitHub</div><div class="cc-val">github.com/tarunjoshi03</div></div>
       </div>
       <div class="glass contact-card">
         <div class="cc-icon">📍</div>
-        <div><div class="cc-label">Location</div><div class="cc-val">College Station, TX</div></div>
+        <div><div class="cc-label">Location</div><div class="cc-val">Houston, TX (relocating)</div></div>
       </div>
     </div>
   </section>
 </main>
 
 <script>
-/* ── 3D FLOATING CUBES CANVAS ── */
-const canvas = document.getElementById('bg-canvas');
-const ctx = canvas.getContext('2d');
-let W, H;
+/* CANVAS */
+const canvas=document.getElementById('bg-canvas'),ctx=canvas.getContext('2d');
+let W,H;
 function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight}
-resize();
-window.addEventListener('resize',resize);
-
+resize();window.addEventListener('resize',resize);
 const cubes=[];
-function Cube(){
-  this.x=Math.random()*W;
-  this.y=Math.random()*H;
-  this.size=12+Math.random()*40;
-  this.vx=(Math.random()-.5)*.35;
-  this.vy=(Math.random()-.5)*.35;
-  this.rot=Math.random()*Math.PI*2;
-  this.vrot=(Math.random()-.5)*.008;
-  this.alpha=.04+Math.random()*.12;
-  this.color=Math.random()>.5?'59,142,243':'6,182,212';
-}
-for(let i=0;i<28;i++) cubes.push(new Cube());
-
-function drawCube(c){
-  ctx.save();
-  ctx.translate(c.x,c.y);
-  ctx.rotate(c.rot);
-  const s=c.size;
-  const depth=s*.45;
-  ctx.strokeStyle=`rgba(${c.color},${c.alpha})`;
-  ctx.lineWidth=1;
-  // front face
-  ctx.strokeRect(-s/2,-s/2,s,s);
-  // back face offset
-  ctx.strokeRect(-s/2+depth,-s/2-depth,s,s);
-  // connecting lines
-  ctx.beginPath();
-  [[-s/2,-s/2],[ s/2,-s/2],[ s/2, s/2],[-s/2, s/2]].forEach(([x,y])=>{
-    ctx.moveTo(x,y);ctx.lineTo(x+depth,y-depth);
-  });
-  ctx.stroke();
-  ctx.restore();
-}
-
-function frame(){
-  ctx.clearRect(0,0,W,H);
-  // subtle radial glow center
-  const g=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*.6);
-  g.addColorStop(0,'rgba(30,60,120,0.18)');
-  g.addColorStop(1,'transparent');
-  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-
-  cubes.forEach(c=>{
-    c.x+=c.vx;c.y+=c.vy;c.rot+=c.vrot;
-    if(c.x<-100)c.x=W+100;if(c.x>W+100)c.x=-100;
-    if(c.y<-100)c.y=H+100;if(c.y>H+100)c.y=-100;
-    drawCube(c);
-  });
-  requestAnimationFrame(frame);
-}
+function Cube(){this.x=Math.random()*W;this.y=Math.random()*H;this.size=12+Math.random()*40;this.vx=(Math.random()-.5)*.35;this.vy=(Math.random()-.5)*.35;this.rot=Math.random()*Math.PI*2;this.vrot=(Math.random()-.5)*.008;this.alpha=.04+Math.random()*.12;this.color=Math.random()>.5?'59,142,243':'6,182,212'}
+for(let i=0;i<28;i++)cubes.push(new Cube());
+function drawCube(c){ctx.save();ctx.translate(c.x,c.y);ctx.rotate(c.rot);const s=c.size,d=s*.45;ctx.strokeStyle=`rgba(${c.color},${c.alpha})`;ctx.lineWidth=1;ctx.strokeRect(-s/2,-s/2,s,s);ctx.strokeRect(-s/2+d,-s/2-d,s,s);ctx.beginPath();[[-s/2,-s/2],[s/2,-s/2],[s/2,s/2],[-s/2,s/2]].forEach(([x,y])=>{ctx.moveTo(x,y);ctx.lineTo(x+d,y-d)});ctx.stroke();ctx.restore()}
+function frame(){ctx.clearRect(0,0,W,H);const g=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*.6);g.addColorStop(0,'rgba(30,60,120,0.18)');g.addColorStop(1,'transparent');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);cubes.forEach(c=>{c.x+=c.vx;c.y+=c.vy;c.rot+=c.vrot;if(c.x<-100)c.x=W+100;if(c.x>W+100)c.x=-100;if(c.y<-100)c.y=H+100;if(c.y>H+100)c.y=-100;drawCube(c)});requestAnimationFrame(frame)}
 frame();
 
-/* ── TYPEWRITER ── */
-const roles=['Petroleum Engineer','Energy Analyst','Subsurface Researcher','Data-Driven Engineer','Finance Aspirant'];
-let ri=0,ci=0,deleting=false;
+/* TYPEWRITER */
+const roles=['Energy Finance','A&D Analytics','Upstream M&A','Equity Research','Reservoir Economics'];
+let ri=0,ci=0,del=false;
 const twEl=document.getElementById('tw-line');
-function typeStep(){
-  const word=roles[ri];
-  if(!deleting){
-    ci++;twEl.textContent=word.slice(0,ci);
-    if(ci===word.length){deleting=true;setTimeout(typeStep,1800);return;}
-  } else {
-    ci--;twEl.textContent=word.slice(0,ci);
-    if(ci===0){deleting=false;ri=(ri+1)%roles.length;}
-  }
-  setTimeout(typeStep,deleting?55:90);
-}
+function typeStep(){const w=roles[ri];if(!del){ci++;twEl.textContent=w.slice(0,ci);if(ci===w.length){del=true;setTimeout(typeStep,1800);return}}else{ci--;twEl.textContent=w.slice(0,ci);if(ci===0){del=false;ri=(ri+1)%roles.length}}setTimeout(typeStep,del?55:90)}
 setTimeout(typeStep,1200);
 
-/* ── INTERSECTION OBSERVER (fade in) ── */
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});
-},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+/* FADE IN */
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fi,.fi-l').forEach(el=>io.observe(el));
 
-/* ── THEME TOGGLE ── */
+/* THEME */
 let dark=true;
-function toggleTheme(){
-  dark=!dark;
-  const r=document.documentElement.style;
-  if(!dark){
-    r.setProperty('--bg','#f0f4ff');r.setProperty('--bg2','#e8eef8');
-    r.setProperty('--card','#ffffff');r.setProperty('--border','#d1dce8');
-    r.setProperty('--fg','#0f172a');r.setProperty('--fg2','#334155');
-    r.setProperty('--fg3','#64748b');
-    document.body.style.background='#f0f4ff';
-    document.querySelector('.nav-theme').textContent='🌙 Dark';
-  } else {
-    r.setProperty('--bg','#0d1117');r.setProperty('--bg2','#111827');
-    r.setProperty('--card','#0f1823');r.setProperty('--border','#1e2d3d');
-    r.setProperty('--fg','#f0f4ff');r.setProperty('--fg2','#94a3b8');
-    r.setProperty('--fg3','#64748b');
-    document.body.style.background='#0d1117';
-    document.querySelector('.nav-theme').textContent='☀ Light';
-  }
-}
+function toggleTheme(){dark=!dark;const r=document.documentElement.style;if(!dark){r.setProperty('--bg','#f0f4ff');r.setProperty('--card','#ffffff');r.setProperty('--border','#d1dce8');r.setProperty('--fg','#0f172a');r.setProperty('--fg2','#334155');r.setProperty('--fg3','#64748b');document.body.style.background='#f0f4ff';document.querySelector('.nav-theme').textContent='🌙 Dark'}else{r.setProperty('--bg','#0d1117');r.setProperty('--card','#0f1823');r.setProperty('--border','#1e2d3d');r.setProperty('--fg','#f0f4ff');r.setProperty('--fg2','#94a3b8');r.setProperty('--fg3','#64748b');document.body.style.background='#0d1117';document.querySelector('.nav-theme').textContent='☀ Light'}}
 </script>
 </body>
 </html>
