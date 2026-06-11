@@ -27,7 +27,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .nav-theme:hover{border-color:var(--primary);color:var(--primary)}
 
 /* LAYOUT */
-main{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 2rem 6rem}
+main{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 2rem 6rem;overflow-x:clip}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:5rem}
@@ -79,8 +79,8 @@ section{padding:5rem 0}
 .gh-link:hover{background:rgba(59,142,243,0.1)}
 
 /* CAROUSEL */
-.carousel-wrap{position:relative;display:flex;align-items:center;gap:0;margin:0 -4rem}
-.carousel-viewport{overflow:visible;flex:1;padding:1rem 0}
+.carousel-wrap{position:relative;display:flex;align-items:center;gap:0;margin:0 -2rem}
+.carousel-viewport{overflow:hidden;flex:1;padding:1rem 0}
 .carousel-track{display:flex;gap:1.5rem;transition:transform .45s cubic-bezier(.4,0,.2,1);padding:0 15%}
 .car-card{min-width:calc(70% - 2rem);max-width:calc(70% - 2rem);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;opacity:0.4;transform:scale(0.96);transition:opacity .3s,transform .3s}
 .car-card.active-card{opacity:1;transform:scale(1)}
@@ -277,7 +277,7 @@ section{padding:5rem 0}
     <div class="sec-label fi">Projects</div>
     <div class="sec-title fi">Open-source models & research</div>
     <div class="carousel-wrap fi">
-      <button class="car-btn car-prev" onclick="moveCarousel(-1)">&#8592;</button>
+      <button class="car-btn car-prev" onclick="moveCarousel(-1)" style="position:absolute;left:-20px;z-index:10">&#8592;</button>
       <div class="carousel-viewport">
         <div class="carousel-track" id="carouselTrack">
 
@@ -428,7 +428,7 @@ section{padding:5rem 0}
 
         </div>
       </div>
-      <button class="car-btn car-next" onclick="moveCarousel(1)">&#8594;</button>
+      <button class="car-btn car-next" onclick="moveCarousel(1)" style="position:absolute;right:-20px;z-index:10">&#8594;</button>
     </div>
     <div class="car-dots" id="carDots"></div>
   </section>
