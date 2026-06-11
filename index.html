@@ -284,22 +284,9 @@ section{padding:5rem 0}
         <div class="carousel-track" id="carouselTrack">
 
           <!-- CARD 1 -->
-          <div class="car-card glass">
-            <div class="car-img" style="background:linear-gradient(135deg,#0d1f35 0%,#0a2a1a 100%)">
-              <div class="car-img-content">
-                <div class="code-line"><span style="color:#06b6d4">def</span> <span style="color:#3b8ef3">dcf_model</span>(wells, price, discount_rate):</div>
-                <div class="code-line pl">cashflows = arps_decline(wells)</div>
-                <div class="code-line pl">npv = <span style="color:#06b6d4">sum</span>(cf/(1+r)**t ...)</div>
-                <div class="code-line pl"><span style="color:#f59e0b">irr</span> = newton(npv_func, x0=0.1)</div>
-                <div class="code-line"><span style="color:#94a3b8"># IRR: 34.2% | NPV: $142MM</span></div>
-                <div class="car-chart">
-                  <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="0,55 30,45 60,32 90,22 120,16 150,12 180,10 200,9" fill="none" stroke="#3b8ef3" stroke-width="2"/>
-                    <polyline points="0,55 30,50 60,44 90,40 120,37 150,35 180,34 200,33" fill="none" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="4,2"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
+          <div class="car-img" style="padding:0;overflow:hidden">
+  <img src="https://raw.githubusercontent.com/tarunjoshi03/pr-apa-deal-teardown/main/irr_sensitivity.png" style="width:100%;height:100%;object-fit:cover"/>
+</div>
             <div class="car-body">
               <div class="car-title">💰 PR/APA A&D Deal Teardown</div>
               <div class="car-sub">Permian Resources $608MM Northern Delaware Basin Acquisition</div>
@@ -339,26 +326,9 @@ section{padding:5rem 0}
           </div>
 
           <!-- CARD 3 -->
-          <div class="car-card glass">
-            <div class="car-img" style="background:linear-gradient(135deg,#0d1f35 0%,#1a1a0d 100%)">
-              <div class="car-img-content">
-                <div class="code-line"><span style="color:#94a3b8"># LAS Log Analysis - Kansas KGS Well</span></div>
-                <div class="code-line">vshale = (GR - GR_min) / (GR_max - GR_min)</div>
-                <div class="code-line">phie = NPHI - <span style="color:#f59e0b">0.45</span> * vshale</div>
-                <div class="code-line">sw = (Rw / (phie**<span style="color:#f59e0b">2</span> * Rt))**<span style="color:#f59e0b">0.5</span></div>
-                <div class="code-line"><span style="color:#94a3b8"># Net Pay: 42ft | Sw: 28% | PHIE: 18%</span></div>
-                <div class="car-chart">
-                  <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="30" y1="5" x2="30" y2="55" stroke="rgba(59,142,243,0.4)" stroke-width="1"/>
-                    <line x1="80" y1="5" x2="80" y2="55" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
-                    <line x1="130" y1="5" x2="130" y2="55" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
-                    <polyline points="30,8 30,15 50,15 50,22 30,22 30,35 55,35 55,48 30,48 30,55" fill="none" stroke="#3b8ef3" stroke-width="2"/>
-                    <polyline points="80,5 90,5 90,20 75,20 75,38 88,38 88,55" fill="none" stroke="#06b6d4" stroke-width="2"/>
-                    <polyline points="130,10 140,10 140,25 125,25 125,40 138,40 138,55" fill="none" stroke="#f59e0b" stroke-width="2"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
+          <div class="car-img" style="padding:0;overflow:hidden">
+  <img src="https://raw.githubusercontent.com/tarunjoshi03/kansas-well-petrophysics/main/roger10_4_full_petrophysics.png" style="width:100%;height:100%;object-fit:cover"/>
+</div>
             <div class="car-body">
               <div class="car-title">⚡ Kansas Well Petrophysics</div>
               <div class="car-sub">Formation Evaluation · KGS Public Well Database</div>
@@ -369,24 +339,9 @@ section{padding:5rem 0}
           </div>
 
           <!-- CARD 4 -->
-          <div class="car-card glass">
-            <div class="car-img" style="background:linear-gradient(135deg,#0d1f35 0%,#0d1a2e 100%)">
-              <div class="car-img-content">
-                <div class="code-line"><span style="color:#94a3b8"># Stratton Field - Frio Formation</span></div>
-                <div class="code-line">seis = segyio.open(<span style="color:#f59e0b">"stratton_3d.sgy"</span>)</div>
-                <div class="code-line">horizon = pick_horizon(seis, <span style="color:#f59e0b">t=1420</span>)</div>
-                <div class="code-line">amplitude = extract_amp(horizon)</div>
-                <div class="code-line"><span style="color:#94a3b8"># Frio reservoir tied @ 1.42s TWT</span></div>
-                <div class="car-chart">
-                  <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,30 Q25,10 50,30 Q75,50 100,28 Q125,8 150,32 Q175,52 200,25" fill="none" stroke="#3b8ef3" stroke-width="1.5"/>
-                    <path d="M0,35 Q25,15 50,35 Q75,55 100,33 Q125,13 150,37 Q175,57 200,30" fill="none" stroke="#06b6d4" stroke-width="1.5" opacity="0.7"/>
-                    <path d="M0,25 Q25,5 50,25 Q75,45 100,23 Q125,3 150,27 Q175,47 200,20" fill="none" stroke="#3b8ef3" stroke-width="1" opacity="0.4"/>
-                    <line x1="60" y1="0" x2="60" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
+          <div class="car-img" style="padding:0;overflow:hidden">
+  <img src="https://raw.githubusercontent.com/tarunjoshi03/stratton-seismic-analysis/main/stratton_well_seismic_tie.png" style="width:100%;height:100%;object-fit:cover"/>
+</div>
             <div class="car-body">
               <div class="car-title">🗺️ Stratton Field 3D Seismic</div>
               <div class="car-sub">3D Seismic Interpretation · South Texas Frio Formation</div>
@@ -397,28 +352,9 @@ section{padding:5rem 0}
           </div>
 
           <!-- CARD 5 -->
-          <div class="car-card glass">
-            <div class="car-img" style="background:linear-gradient(135deg,#0d1f35 0%,#0d2a2a 100%)">
-              <div class="car-img-content">
-                <div class="code-line"><span style="color:#94a3b8"># USGS Atlantic Margin 2D Seismic</span></div>
-                <div class="code-line">terminations = detect_terminations(</div>
-                <div class="code-line pl">seismic, method=<span style="color:#f59e0b">"MVS1977"</span>)</div>
-                <div class="code-line"><span style="color:#06b6d4">for</span> t <span style="color:#06b6d4">in</span> terminations:</div>
-                <div class="code-line pl"><span style="color:#94a3b8"># onlap | downlap | truncation</span></div>
-                <div class="car-chart">
-                  <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0" y1="40" x2="200" y2="40" stroke="rgba(59,142,243,0.3)" stroke-width="1"/>
-                    <line x1="0" y1="25" x2="200" y2="25" stroke="rgba(59,142,243,0.3)" stroke-width="1"/>
-                    <line x1="20" y1="55" x2="80" y2="40" stroke="#3b8ef3" stroke-width="2"/>
-                    <line x1="40" y1="55" x2="80" y2="40" stroke="#3b8ef3" stroke-width="2"/>
-                    <line x1="60" y1="55" x2="80" y2="40" stroke="#3b8ef3" stroke-width="2"/>
-                    <line x1="80" y1="40" x2="200" y2="40" stroke="#06b6d4" stroke-width="2"/>
-                    <line x1="120" y1="25" x2="160" y2="55" stroke="#f59e0b" stroke-width="2"/>
-                    <line x1="140" y1="25" x2="160" y2="55" stroke="#f59e0b" stroke-width="2"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
+          <div class="car-img" style="padding:0;overflow:hidden">
+  <img src="https://raw.githubusercontent.com/tarunjoshi03/atlantic-seismic-terminations/main/atlantic_terminations_final.png" style="width:100%;height:100%;object-fit:cover"/>
+</div>
             <div class="car-body">
               <div class="car-title">🌊 Atlantic Seismic Terminations</div>
               <div class="car-sub">Automated Horizon Tracking · USGS 2D Marine Seismic</div>
