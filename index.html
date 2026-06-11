@@ -170,7 +170,7 @@ section{padding:5rem 0}
   <div class="hero">
     <div style="display:flex;align-items:center;gap:3rem;flex-wrap:wrap">
       <div style="flex:1;min-width:280px">
-        <div class="hero-badge fi" id="hero-badge"><span id="badge-dot"></span> <span id="badge-text"></span></div>
+        <div class="hero-badge fi"><span></span> Petroleum Engineer · A&D Analyst · Reservoir Economics · Upstream Finance</div>
         <h1 class="fi">
           <span class="line1">Tarun Joshi</span>
           <span class="line2" id="tw-line">Energy Finance</span><span class="tw-cursor"></span>
@@ -535,20 +535,6 @@ window.addEventListener('resize',()=>goTo(cur));
 
 let dark=true;
 function toggleTheme(){dark=!dark;const r=document.documentElement.style;if(!dark){r.setProperty('--bg','#f0f4ff');r.setProperty('--card','#ffffff');r.setProperty('--border','#d1dce8');r.setProperty('--fg','#0f172a');r.setProperty('--fg2','#334155');r.setProperty('--fg3','#64748b');document.body.style.background='#f0f4ff';document.querySelector('.nav-theme').textContent='🌙 Dark'}else{r.setProperty('--bg','#0d1117');r.setProperty('--card','#0f1823');r.setProperty('--border','#1e2d3d');r.setProperty('--fg','#f0f4ff');r.setProperty('--fg2','#94a3b8');r.setProperty('--fg3','#64748b');document.body.style.background='#0d1117';document.querySelector('.nav-theme').textContent='☀ Light'}}
-
-/* BADGE TICKER */
-const badgeItems=['Petroleum Engineer','A&D Analyst','Reservoir Economics','Upstream Finance'];
-let bi=0,bci=0,bdel=false;
-const bEl=document.getElementById('badge-text');
-const bDot=document.getElementById('badge-dot');
-function badgeStep(){
-  if(!bEl)return;
-  const w=badgeItems[bi];
-  if(!bdel){bci++;bEl.textContent=w.slice(0,bci);if(bci===w.length){bdel=true;setTimeout(badgeStep,1500);return}}
-  else{bci--;bEl.textContent=w.slice(0,bci);if(bci===0){bdel=false;bi=(bi+1)%badgeItems.length}}
-  setTimeout(badgeStep,bdel?40:80)
-}
-badgeStep();
 </script>
 </body>
 </html>
