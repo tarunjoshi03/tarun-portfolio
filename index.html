@@ -78,12 +78,35 @@ section{padding:5rem 0}
 .gh-link{font-size:11px;color:var(--primary);text-decoration:none;border:1px solid rgba(59,142,243,0.3);padding:4px 10px;border-radius:20px;white-space:nowrap;transition:all .2s}
 .gh-link:hover{background:rgba(59,142,243,0.1)}
 
+/* CAROUSEL */
+.carousel-wrap{position:relative;display:flex;align-items:center;gap:1rem}
+.carousel-viewport{overflow:hidden;flex:1;border-radius:var(--radius)}
+.carousel-track{display:flex;gap:1.25rem;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.car-card{min-width:340px;max-width:340px;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.car-img{height:180px;padding:1.25rem;font-family:'Courier New',monospace;font-size:11px;display:flex;align-items:flex-start;position:relative;overflow:hidden}
+.car-img-content{width:100%;z-index:1}
+.code-line{color:#e2e8f0;line-height:1.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.code-line.pl{padding-left:1.2rem}
+.car-chart{margin-top:.75rem;opacity:.9}
+.car-chart svg{width:100%;height:50px}
+.car-body{padding:1.25rem 1.5rem;flex:1;display:flex;flex-direction:column}
+.car-title{font-size:15px;font-weight:700;margin-bottom:4px}
+.car-sub{font-size:12px;color:var(--primary);font-weight:600;margin-bottom:.65rem}
+.car-desc{font-size:13px;color:var(--fg2);line-height:1.65;margin-bottom:.85rem;flex:1}
+.car-btn-code{display:inline-flex;align-items:center;gap:6px;background:rgba(59,142,243,0.1);border:1px solid rgba(59,142,243,0.3);color:var(--fg);text-decoration:none;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;transition:all .2s;width:fit-content}
+.car-btn-code:hover{background:rgba(59,142,243,0.2);border-color:var(--primary);color:var(--primary)}
+.car-btn{background:rgba(15,24,35,0.8);border:1px solid var(--border);color:var(--fg);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.car-btn:hover{border-color:var(--primary);color:var(--primary)}
+.car-dots{display:flex;justify-content:center;gap:8px;margin-top:1.25rem}
+.car-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .2s}
+.car-dot.active{background:var(--primary);width:20px;border-radius:4px}
+
 /* SKILLS */
 .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
 .skill-group{padding:1.5rem}
 .sg-title{font-size:13px;font-weight:700;margin-bottom:1rem;color:var(--fg);display:flex;align-items:center;gap:8px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
-.skill-tag{font-size:12px;padding:5px 12px;border-radius:8px;background:rgba(30,45,61,0.8);border:1px solid var(--border);color:var(--fg);transition:all .2s;cursor:default}
+.skill-tag{font-size:12px;padding:5px 12px;border-radius:8px;background:rgba(30,45,61,0.8);border:1px solid var(--border);color:var(--fg2);transition:all .2s;cursor:default}
 .skill-tag:hover{background:rgba(59,142,243,0.15);border-color:rgba(59,142,243,0.4);color:var(--primary);transform:scale(1.05)}
 
 /* EDUCATION */
@@ -98,7 +121,7 @@ section{padding:5rem 0}
 
 /* CERTS */
 .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:1rem}
-.cert{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;font-size:12px;color:var(--fg2)}
+.cert{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(15,24,35,0.6);border:1px solid var(--border);border-radius:10px;font-size:12px;color:var(--fg2)}
 .cert-dot{width:6px;height:6px;border-radius:50%;background:linear-gradient(90deg,var(--primary),var(--accent));flex-shrink:0}
 
 /* CONTACT */
@@ -157,7 +180,7 @@ section{padding:5rem 0}
         </div>
       </div>
       <div class="fi" style="flex-shrink:0">
-        <div style="width:280px;height:280px;border-radius:50%;border:2px solid rgba(59,142,243,0.4);padding:4px;box-shadow:0 0 40px rgba(59,142,243,0.25)">
+        <div style="width:200px;height:200px;border-radius:50%;border:2px solid rgba(59,142,243,0.4);padding:4px;box-shadow:0 0 40px rgba(59,142,243,0.25)">
           <img src="photo.jpg"
                onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#3b8ef3,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:56px;font-weight:800;color:#0d1117\'>TJ</div>'"
                style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top" alt="Tarun Joshi"/>
@@ -252,44 +275,161 @@ section{padding:5rem 0}
   <section id="projects">
     <div class="sec-label fi">Projects</div>
     <div class="sec-title fi">Open-source models & research</div>
-    <div class="exp-list">
+    <div class="carousel-wrap fi">
+      <button class="car-btn car-prev" onclick="moveCarousel(-1)">&#8592;</button>
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack">
 
-      <div class="glass exp-card fi">
-        <div class="exp-top"><div class="exp-role">💰 PR/APA A&D Deal Teardown</div><a href="https://github.com/tarunjoshi03/pr-apa-deal-teardown" target="_blank" class="gh-link">↗ GitHub</a></div>
-        <div class="exp-co">Upstream A&D Economics · Permian Resources $608MM Northern Delaware Basin Acquisition</div>
-        <div class="exp-desc">Full buy-side diligence workflow on PR's acquisition of APA's Northern Delaware Basin assets. Built Arps decline curves, IRR sensitivity heatmap, and 20-year DCF model sourced directly from SEC 10-K filings. Mirrors the institutional A&D screening process — from production data to $/acre implied valuation.</div>
-        <div class="tags"><span class="tag">DCF</span><span class="tag">IRR Sensitivity</span><span class="tag">Arps DCA</span><span class="tag">SEC 10-K</span><span class="tag">scipy</span><span class="tag">pandas</span><span class="tag">matplotlib</span></div>
+          <!-- CARD 1 -->
+          <div class="car-card glass">
+            <div class="car-img" style="background:linear-gradient(135deg,#0d1f35 0%,#0a2a1a 100%)">
+              <div class="car-img-content">
+                <div class="code-line"><span style="color:#06b6d4">def</span> <span style="color:#3b8ef3">dcf_model</span>(wells, price, discount_rate):</div>
+                <div class="code-line pl">cashflows = arps_decline(wells)</div>
+                <div class="code-line pl">npv = <span style="color:#06b6d4">sum</span>(cf/(1+r)**t ...)</div>
+                <div class="code-line pl"><span style="color:#f59e0b">irr</span> = newton(npv_func, x0=0.1)</div>
+                <div class="code-line"><span style="color:#94a3b8"># IRR: 34.2% | NPV: $142MM</span></div>
+                <div class="car-chart">
+                  <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="0,55 30,45 60,32 90,22 120,16 150,12 180,10 200,9" fill="none" stroke="#3b8ef3" stroke-width="2"/>
+                    <polyline points="0,55 30,50 60,44 90,40 120,37 150,35 180,34 200,33" fill="none" stroke="#06b6d4" stroke-width="1.5" stroke-dasharray="4,2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="car-body">
+              <div class="car-title">💰 PR/APA A&D Deal Teardown</div>
+              <div class="car-sub">Permian Resources $608MM Northern Delaware Basin Acquisition</div>
+              <p class="car-desc">Full buy-side diligence workflow — Arps decline curves, IRR sensitivity heatmap, and 20-year DCF sourced from SEC 10-K filings.</p>
+              <div class="tags" style="margin-bottom:1rem"><span class="tag">DCF</span><span class="tag">IRR Sensitivity</span><span class="tag">Arps DCA</span><span class="tag">SEC 10-K</span><span class="tag">scipy</span></div>
+              <a href="https://github.com/tarunjoshi03/pr-apa-deal-teardown" target="_blank" class="car-btn-code">⌥ Code</a>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="car-card glass">
+            <div class="car-img" style="background:linear-gradient(135deg,#0d1f35 0%,#1a0d2e 100%)">
+              <div class="car-img-content">
+                <div class="code-line"><span style="color:#06b6d4">class</span> <span style="color:#3b8ef3">NAVModel</span>:</div>
+                <div class="code-line pl">ticker = <span style="color:#f59e0b">"MTDR"</span></div>
+                <div class="code-line pl">reserves = load_10k(<span style="color:#f59e0b">"FY2025"</span>)</div>
+                <div class="code-line pl">nav_per_share = <span style="color:#06b6d4">self</span>.calc_nav()</div>
+                <div class="code-line"><span style="color:#94a3b8"># NAV: $68.4/share | P/NAV: 0.81x</span></div>
+                <div class="car-chart">
+                  <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="20" width="25" height="38" fill="rgba(59,142,243,0.6)" rx="2"/>
+                    <rect x="45" y="10" width="25" height="48" fill="rgba(59,142,243,0.8)" rx="2"/>
+                    <rect x="80" y="28" width="25" height="30" fill="rgba(6,182,212,0.6)" rx="2"/>
+                    <rect x="115" y="15" width="25" height="43" fill="rgba(59,142,243,0.7)" rx="2"/>
+                    <rect x="150" y="32" width="25" height="26" fill="rgba(6,182,212,0.5)" rx="2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="car-body">
+              <div class="car-title">📈 MTDR Upstream NAV Model</div>
+              <div class="car-sub">Equity Research · Matador Resources · FY2025 10-K</div>
+              <p class="car-desc">Upstream NAV model with Arps decline curve fitting, type curve generation, and multi-variable sensitivity analysis across commodity price scenarios.</p>
+              <div class="tags" style="margin-bottom:1rem"><span class="tag">NAV Model</span><span class="tag">Type Curves</span><span class="tag">Sensitivity</span><span class="tag">Equity Research</span></div>
+              <a href="https://github.com/tarunjoshi03/mtdr-nav-model" target="_blank" class="car-btn-code">⌥ Code</a>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="car-card glass">
+            <div class="car-img" style="background:linear-gradient(135deg,#0d1f35 0%,#1a1a0d 100%)">
+              <div class="car-img-content">
+                <div class="code-line"><span style="color:#94a3b8"># LAS Log Analysis — Kansas KGS Well</span></div>
+                <div class="code-line">vshale = (GR - GR_min) / (GR_max - GR_min)</div>
+                <div class="code-line">phie = NPHI - <span style="color:#f59e0b">0.45</span> * vshale</div>
+                <div class="code-line">sw = (Rw / (phie**<span style="color:#f59e0b">2</span> * Rt))**<span style="color:#f59e0b">0.5</span></div>
+                <div class="code-line"><span style="color:#94a3b8"># Net Pay: 42ft | Sw: 28% | PHIE: 18%</span></div>
+                <div class="car-chart">
+                  <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="30" y1="5" x2="30" y2="55" stroke="rgba(59,142,243,0.4)" stroke-width="1"/>
+                    <line x1="80" y1="5" x2="80" y2="55" stroke="rgba(6,182,212,0.4)" stroke-width="1"/>
+                    <line x1="130" y1="5" x2="130" y2="55" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+                    <polyline points="30,8 30,15 50,15 50,22 30,22 30,35 55,35 55,48 30,48 30,55" fill="none" stroke="#3b8ef3" stroke-width="2"/>
+                    <polyline points="80,5 90,5 90,20 75,20 75,38 88,38 88,55" fill="none" stroke="#06b6d4" stroke-width="2"/>
+                    <polyline points="130,10 140,10 140,25 125,25 125,40 138,40 138,55" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="car-body">
+              <div class="car-title">⚡ Kansas Well Petrophysics</div>
+              <div class="car-sub">Formation Evaluation · KGS Public Well Database</div>
+              <p class="car-desc">Vshale, PHIE, and Sw via Archie's equation on real KGS well data. Automated net pay flagging — subsurface foundation for reserves classification.</p>
+              <div class="tags" style="margin-bottom:1rem"><span class="tag">Petrophysics</span><span class="tag">LAS Logs</span><span class="tag">Archie</span><span class="tag">lasio</span><span class="tag">numpy</span></div>
+              <a href="https://github.com/tarunjoshi03/kansas-well-petrophysics" target="_blank" class="car-btn-code">⌥ Code</a>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="car-card glass">
+            <div class="car-img" style="background:linear-gradient(135deg,#0d1f35 0%,#0d1a2e 100%)">
+              <div class="car-img-content">
+                <div class="code-line"><span style="color:#94a3b8"># Stratton Field — Frio Formation</span></div>
+                <div class="code-line">seis = segyio.open(<span style="color:#f59e0b">"stratton_3d.sgy"</span>)</div>
+                <div class="code-line">horizon = pick_horizon(seis, <span style="color:#f59e0b">t=1420</span>)</div>
+                <div class="code-line">amplitude = extract_amp(horizon)</div>
+                <div class="code-line"><span style="color:#94a3b8"># Frio reservoir tied @ 1.42s TWT</span></div>
+                <div class="car-chart">
+                  <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,30 Q25,10 50,30 Q75,50 100,28 Q125,8 150,32 Q175,52 200,25" fill="none" stroke="#3b8ef3" stroke-width="1.5"/>
+                    <path d="M0,35 Q25,15 50,35 Q75,55 100,33 Q125,13 150,37 Q175,57 200,30" fill="none" stroke="#06b6d4" stroke-width="1.5" opacity="0.7"/>
+                    <path d="M0,25 Q25,5 50,25 Q75,45 100,23 Q125,3 150,27 Q175,47 200,20" fill="none" stroke="#3b8ef3" stroke-width="1" opacity="0.4"/>
+                    <line x1="60" y1="0" x2="60" y2="60" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="car-body">
+              <div class="car-title">🗺️ Stratton Field 3D Seismic</div>
+              <div class="car-sub">3D Seismic Interpretation · South Texas Frio Formation</div>
+              <p class="car-desc">Horizon picking, amplitude extraction, and synthetic seismogram generation — well-to-seismic tie on a real gas reservoir. Directly applicable to prospect evaluation in A&D.</p>
+              <div class="tags" style="margin-bottom:1rem"><span class="tag">3D Seismic</span><span class="tag">Horizon Picking</span><span class="tag">Well Tie</span><span class="tag">segyio</span></div>
+              <a href="https://github.com/tarunjoshi03/stratton-seismic-analysis" target="_blank" class="car-btn-code">⌥ Code</a>
+            </div>
+          </div>
+
+          <!-- CARD 5 -->
+          <div class="car-card glass">
+            <div class="car-img" style="background:linear-gradient(135deg,#0d1f35 0%,#0d2a2a 100%)">
+              <div class="car-img-content">
+                <div class="code-line"><span style="color:#94a3b8"># USGS Atlantic Margin 2D Seismic</span></div>
+                <div class="code-line">terminations = detect_terminations(</div>
+                <div class="code-line pl">seismic, method=<span style="color:#f59e0b">"MVS1977"</span>)</div>
+                <div class="code-line"><span style="color:#06b6d4">for</span> t <span style="color:#06b6d4">in</span> terminations:</div>
+                <div class="code-line pl"><span style="color:#94a3b8"># onlap | downlap | truncation</span></div>
+                <div class="car-chart">
+                  <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="40" x2="200" y2="40" stroke="rgba(59,142,243,0.3)" stroke-width="1"/>
+                    <line x1="0" y1="25" x2="200" y2="25" stroke="rgba(59,142,243,0.3)" stroke-width="1"/>
+                    <line x1="20" y1="55" x2="80" y2="40" stroke="#3b8ef3" stroke-width="2"/>
+                    <line x1="40" y1="55" x2="80" y2="40" stroke="#3b8ef3" stroke-width="2"/>
+                    <line x1="60" y1="55" x2="80" y2="40" stroke="#3b8ef3" stroke-width="2"/>
+                    <line x1="80" y1="40" x2="200" y2="40" stroke="#06b6d4" stroke-width="2"/>
+                    <line x1="120" y1="25" x2="160" y2="55" stroke="#f59e0b" stroke-width="2"/>
+                    <line x1="140" y1="25" x2="160" y2="55" stroke="#f59e0b" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="car-body">
+              <div class="car-title">🌊 Atlantic Seismic Terminations</div>
+              <div class="car-sub">Automated Horizon Tracking · USGS 2D Marine Seismic</div>
+              <p class="car-desc">Automated termination detection on USGS Atlantic margin data using Mitchum, Vail & Sangree (1977) — onlap, downlap, truncation, and unconformities.</p>
+              <div class="tags" style="margin-bottom:1rem"><span class="tag">2D Seismic</span><span class="tag">Sequence Strat</span><span class="tag">segyio</span><span class="tag">scipy</span></div>
+              <a href="https://github.com/tarunjoshi03/atlantic-seismic-terminations" target="_blank" class="car-btn-code">⌥ Code</a>
+            </div>
+          </div>
+
+        </div>
       </div>
-
-      <div class="glass exp-card fi">
-        <div class="exp-top"><div class="exp-role">📈 MTDR Upstream NAV Model</div><a href="https://github.com/tarunjoshi03/mtdr-nav-model" target="_blank" class="gh-link">↗ GitHub</a></div>
-        <div class="exp-co">Equity Research · Matador Resources (MTDR) · FY2025 10-K</div>
-        <div class="exp-desc">Upstream Net Asset Value model for Matador Resources built from FY2025 10-K filings. Arps decline curve fitting, type curve generation, and multi-variable sensitivity analysis across commodity price and cost assumptions — the core building block of upstream equity research and reserves-based lending.</div>
-        <div class="tags"><span class="tag">NAV Model</span><span class="tag">Arps DCA</span><span class="tag">Type Curves</span><span class="tag">Sensitivity Analysis</span><span class="tag">Equity Research</span><span class="tag">Python</span></div>
-      </div>
-
-      <div class="glass exp-card fi">
-        <div class="exp-top"><div class="exp-role">⚡ Kansas Well Petrophysics</div><a href="https://github.com/tarunjoshi03/kansas-well-petrophysics" target="_blank" class="gh-link">↗ GitHub</a></div>
-        <div class="exp-co">Formation Evaluation · KGS Public Well Database</div>
-        <div class="exp-desc">Petrophysical formation evaluation on real KGS well data. Computed Vshale, effective porosity (PHIE), and water saturation via Archie's equation. Automated net pay flagging with cutoff logic — the subsurface foundation for reserves classification and asset screening.</div>
-        <div class="tags"><span class="tag">Petrophysics</span><span class="tag">LAS Logs</span><span class="tag">Archie Equation</span><span class="tag">Net Pay</span><span class="tag">lasio</span><span class="tag">numpy</span></div>
-      </div>
-
-      <div class="glass exp-card fi">
-        <div class="exp-top"><div class="exp-role">🗺️ Stratton Field 3D Seismic Analysis</div><a href="https://github.com/tarunjoshi03/stratton-seismic-analysis" target="_blank" class="gh-link">↗ GitHub</a></div>
-        <div class="exp-co">3D Seismic Interpretation · South Texas Frio Formation Gas Reservoir</div>
-        <div class="exp-desc">3D seismic interpretation and well-to-seismic tie on the Stratton Field Frio Formation gas reservoir. Horizon picking, amplitude extraction, and synthetic seismogram generation — subsurface skills directly applicable to prospect evaluation and resource derisking in A&D workflows.</div>
-        <div class="tags"><span class="tag">3D Seismic</span><span class="tag">Horizon Picking</span><span class="tag">Well Tie</span><span class="tag">segyio</span><span class="tag">matplotlib</span></div>
-      </div>
-
-      <div class="glass exp-card fi">
-        <div class="exp-top"><div class="exp-role">🌊 Atlantic Seismic Terminations</div><a href="https://github.com/tarunjoshi03/atlantic-seismic-terminations" target="_blank" class="gh-link">↗ GitHub</a></div>
-        <div class="exp-co">Automated Horizon Tracking · USGS 2D Marine Seismic · Atlantic Margin</div>
-        <div class="exp-desc">Automated horizon tracking and stratigraphic termination detection on USGS 2D marine seismic data. Implemented Mitchum, Vail & Sangree (1977) sequence stratigraphy framework to identify onlap, downlap, truncation, and erosional unconformities — key inputs for frontier basin exploration and resource prospectivity.</div>
-        <div class="tags"><span class="tag">2D Seismic</span><span class="tag">Sequence Stratigraphy</span><span class="tag">Horizon Tracking</span><span class="tag">segyio</span><span class="tag">scipy</span></div>
-      </div>
-
+      <button class="car-btn car-next" onclick="moveCarousel(1)">&#8594;</button>
     </div>
+    <div class="car-dots" id="carDots"></div>
   </section>
 
   <div class="divider"></div>
@@ -392,30 +532,31 @@ section{padding:5rem 0}
 
   <div class="divider"></div>
 
-<!-- CONTACT -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="sec-label fi">Contact</div>
     <div class="sec-title fi">Get in touch</div>
     <div class="contact-grid fi">
-      <a href="mailto:tarunjoshi359@gmail.com" class="glass contact-card" style="text-decoration:none;cursor:pointer;color:inherit">
+      <div class="glass contact-card">
         <div class="cc-icon">✉️</div>
         <div><div class="cc-label">Email</div><div class="cc-val">tarunjoshi359@gmail.com</div></div>
-      </a>
-      <a href="https://www.linkedin.com/in/tarunjoshi03" target="_blank" class="glass contact-card" style="text-decoration:none;cursor:pointer;color:inherit">
+      </div>
+      <div class="glass contact-card">
         <div class="cc-icon">💼</div>
         <div><div class="cc-label">LinkedIn</div><div class="cc-val">linkedin.com/in/tarunjoshi03</div></div>
-      </a>
-      <a href="https://github.com/tarunjoshi03" target="_blank" class="glass contact-card" style="text-decoration:none;cursor:pointer;color:inherit">
+      </div>
+      <div class="glass contact-card">
         <div class="cc-icon">🐙</div>
         <div><div class="cc-label">GitHub</div><div class="cc-val">github.com/tarunjoshi03</div></div>
-      </a>
+      </div>
       <div class="glass contact-card">
         <div class="cc-icon">📍</div>
-        <div><div class="cc-label">Location</div><div class="cc-val">College Station, TX</div></div>
+        <div><div class="cc-label">Location</div><div class="cc-val">Houston, TX (relocating)</div></div>
       </div>
     </div>
   </section>
 </main>
+
 <script>
 /* CANVAS */
 const canvas=document.getElementById('bg-canvas'),ctx=canvas.getContext('2d');
@@ -440,9 +581,18 @@ setTimeout(typeStep,1200);
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fi,.fi-l').forEach(el=>io.observe(el));
 
-/* THEME */
+/* CAROUSEL */
+const track=document.getElementById('carouselTrack');
+const cards=document.querySelectorAll('.car-card');
+const dotsEl=document.getElementById('carDots');
+let cur=0;
+cards.forEach((_,i)=>{const d=document.createElement('div');d.className='car-dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d)});
+function goTo(i){cur=Math.max(0,Math.min(i,cards.length-1));const w=cards[0].offsetWidth+20;track.style.transform=`translateX(-${cur*w}px)`;document.querySelectorAll('.car-dot').forEach((d,j)=>d.classList.toggle('active',j===cur))}
+function moveCarousel(dir){goTo(cur+dir)}
+window.addEventListener('resize',()=>goTo(cur));
+
 let dark=true;
-function toggleTheme(){dark=!dark;const r=document.documentElement.style;if(!dark){r.setProperty('--bg','#f0f4ff');r.setProperty('--card','#ffffff');r.setProperty('--border','#d1dce8');r.setProperty('--fg','#0f172a');r.setProperty('--fg2','#334155');r.setProperty('--fg3','#64748b');document.body.style.background='#f0f4ff';document.querySelectorAll('.glass').forEach(el=>el.style.background='rgba(255,255,255,0.85)');document.querySelectorAll('.skill-tag').forEach(el=>el.style.background='rgba(210,220,235,0.8)');document.querySelectorAll('.cert').forEach(el=>el.style.background='rgba(255,255,255,0.85)');document.querySelector('.nav-theme').textContent='🌙 Dark'}else{r.setProperty('--bg','#0d1117');r.setProperty('--card','#0f1823');r.setProperty('--border','#1e2d3d');r.setProperty('--fg','#f0f4ff');r.setProperty('--fg2','#94a3b8');r.setProperty('--fg3','#64748b');document.body.style.background='#0d1117';document.querySelectorAll('.glass').forEach(el=>el.style.background='');document.querySelectorAll('.skill-tag').forEach(el=>el.style.background='');document.querySelectorAll('.cert').forEach(el=>el.style.background='');document.querySelector('.nav-theme').textContent='☀ Light'}}
+function toggleTheme(){dark=!dark;const r=document.documentElement.style;if(!dark){r.setProperty('--bg','#f0f4ff');r.setProperty('--card','#ffffff');r.setProperty('--border','#d1dce8');r.setProperty('--fg','#0f172a');r.setProperty('--fg2','#334155');r.setProperty('--fg3','#64748b');document.body.style.background='#f0f4ff';document.querySelector('.nav-theme').textContent='🌙 Dark'}else{r.setProperty('--bg','#0d1117');r.setProperty('--card','#0f1823');r.setProperty('--border','#1e2d3d');r.setProperty('--fg','#f0f4ff');r.setProperty('--fg2','#94a3b8');r.setProperty('--fg3','#64748b');document.body.style.background='#0d1117';document.querySelector('.nav-theme').textContent='☀ Light'}}
 </script>
 </body>
 </html>
