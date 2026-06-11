@@ -141,7 +141,7 @@ section{padding:5rem 0}
 .fi-l.vis{opacity:1;transform:translateX(0)}
 
 /* TYPEWRITER */
-.tw-cursor{display:inline-block;width:3px;height:1em;background:var(--accent);margin-left:4px;vertical-align:-.1em;animation:blink .7s infinite}
+.tw-cursor{display:inline-block;width:3px;height:1em;background:var(--accent);margin-right:8px;vertical-align:-.1em}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
 ::-webkit-scrollbar{width:5px}
@@ -513,8 +513,25 @@ frame();
 const roles=['Energy Finance','A&D Analytics','Upstream M&A','Equity Research','Reservoir Economics'];
 let ri=0,ci=0,del=false;
 const twEl=document.getElementById('tw-line');
-function typeStep(){const w=roles[ri];if(!del){ci++;twEl.textContent=w.slice(0,ci);if(ci===w.length){del=true;setTimeout(typeStep,1800);return}}else{ci--;twEl.textContent=w.slice(0,ci);if(ci===0){del=false;ri=(ri+1)%roles.length}}setTimeout(typeStep,del?55:90)}
-setTimeout(typeStep,1200);
+function typeStep(){
+  const w=roles[ri];
+  if(!del){
+    ci++;twEl.textContent=w.slice(0,ci);
+    document.querySelector('.tw-cursor').style.animation='none';
+    if(ci===w.length){
+      del=true;
+      document.querySelector('.tw-cursor').style.animation='blink .7s infinite';
+      setTimeout(typeStep,1800);return;
+    }
+  } else {
+    ci--;twEl.textContent=w.slice(0,ci);
+    document.querySelector('.tw-cursor').style.animation='none';
+    if(ci===0){del=false;ri=(ri+1)%roles.length;
+      document.querySelector('.tw-cursor').style.animation='blink .7s infinite';
+    }
+  }
+  setTimeout(typeStep,del?55:90);
+};
 
 /* FADE IN */
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
