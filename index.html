@@ -79,13 +79,15 @@ section{padding:5rem 0}
 .gh-link:hover{background:rgba(59,142,243,0.1)}
 
 /* CAROUSEL */
-.carousel-wrap{position:relative;display:flex;align-items:center;gap:0;margin:0 -2rem;padding:0 3rem}
-.carousel-viewport{overflow:hidden;flex:1;padding:1rem 0}
+.carousel-wrap{position:relative;padding:0 3rem}
+.carousel-viewport{overflow:hidden;width:100%}
 .carousel-track{display:flex;gap:1.5rem;transition:transform .45s cubic-bezier(.4,0,.2,1)}
-.car-card{min-width:65%;max-width:65%;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;opacity:0.35;transform:scale(0.94);transition:opacity .3s,transform .3s;flex-shrink:0}
+.car-card{min-width:68%;max-width:68%;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;opacity:0.35;transform:scale(0.94);transition:opacity .3s,transform .3s;flex-shrink:0}
 .car-card.active-card{opacity:1;transform:scale(1)}
-.car-btn{background:rgba(15,24,35,0.9);border:1px solid var(--border);color:var(--fg);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;z-index:10}
-.car-btn:hover{border-color:var(--primary);color:var(--primary)}
+.car-btn{position:absolute;top:40%;background:rgba(15,24,35,0.9);border:1.5px solid var(--primary);color:var(--fg);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:10;line-height:1}
+.car-prev{left:0}
+.car-next{right:0}
+.car-btn:hover{background:var(--primary);color:#fff}
 .car-img{height:280px;padding:1.5rem;font-family:'Courier New',monospace;font-size:12px;display:flex;align-items:flex-start;position:relative;overflow:hidden}
 .car-img-content{width:100%;z-index:1}
 .code-line{color:#e2e8f0;line-height:1.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -98,8 +100,6 @@ section{padding:5rem 0}
 .car-desc{font-size:14px;color:var(--fg2);line-height:1.7;margin-bottom:1rem;flex:1}
 .car-btn-code{display:inline-flex;align-items:center;gap:6px;background:rgba(59,142,243,0.1);border:1px solid rgba(59,142,243,0.3);color:var(--fg);text-decoration:none;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:500;transition:all .2s;width:fit-content}
 .car-btn-code:hover{background:rgba(59,142,243,0.2);border-color:var(--primary);color:var(--primary)}
-.car-btn{background:rgba(15,24,35,0.8);border:1px solid var(--border);color:var(--fg);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
-.car-btn:hover{border-color:var(--primary);color:var(--primary)}
 .car-dots{display:flex;justify-content:center;gap:8px;margin-top:1.25rem}
 .car-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .2s}
 .car-dot.active{background:var(--primary);width:20px;border-radius:4px}
@@ -279,7 +279,7 @@ section{padding:5rem 0}
     <div class="sec-label fi">Projects</div>
     <div class="sec-title fi">Open-source models & research</div>
     <div class="carousel-wrap fi">
-      <button class="car-btn car-prev" onclick="moveCarousel(-1)" style="position:absolute;left:-20px;z-index:10">&#8592;</button>
+     <button class="car-btn car-prev" onclick="moveCarousel(-1)" style="position:absolute;left:-20px;z-index:10">&#8592;</button>
       <div class="carousel-viewport">
         <div class="carousel-track" id="carouselTrack">
 
@@ -431,7 +431,6 @@ section{padding:5rem 0}
         </div>
       </div>
       <button class="car-btn car-next" onclick="moveCarousel(1)" style="position:absolute;right:-20px;z-index:10">&#8594;</button>
-    </div>
     <div class="car-dots" id="carDots"></div>
   </section>
 
