@@ -79,10 +79,10 @@ section{padding:5rem 0}
 .gh-link:hover{background:rgba(59,142,243,0.1)}
 
 /* CAROUSEL */
-.carousel-wrap{position:relative;display:flex;align-items:center;gap:0;margin:0 -2rem}
-.carousel-viewport{overflow:hidden;flex:1;padding:1rem 0}
-.carousel-track{display:flex;gap:1.5rem;transition:transform .45s cubic-bezier(.4,0,.2,1);padding:0 2rem}
-.car-card{min-width:calc(60vw);max-width:calc(60vw);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;opacity:0.5;transform:scale(0.95);transition:opacity .3s,transform .3s}
+.carousel-wrap{position:relative;display:flex;align-items:center;gap:0;margin:0 -4rem}
+.carousel-viewport{overflow:visible;flex:1;padding:1rem 0}
+.carousel-track{display:flex;gap:1.5rem;transition:transform .45s cubic-bezier(.4,0,.2,1);padding:0 15%}
+.car-card{min-width:calc(70% - 2rem);max-width:calc(70% - 2rem);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;opacity:0.4;transform:scale(0.96);transition:opacity .3s,transform .3s}
 .car-card.active-card{opacity:1;transform:scale(1)}
 .car-img{height:280px;padding:1.5rem;font-family:'Courier New',monospace;font-size:12px;display:flex;align-items:flex-start;position:relative;overflow:hidden}
 .car-img-content{width:100%;z-index:1}
