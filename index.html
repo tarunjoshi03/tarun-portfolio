@@ -83,7 +83,7 @@ section{padding:5rem 0}
 .skill-group{padding:1.5rem}
 .sg-title{font-size:13px;font-weight:700;margin-bottom:1rem;color:var(--fg);display:flex;align-items:center;gap:8px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
-.skill-tag{font-size:12px;padding:5px 12px;border-radius:8px;background:rgba(30,45,61,0.8);border:1px solid var(--border);color:var(--fg2);transition:all .2s;cursor:default}
+.skill-tag{font-size:12px;padding:5px 12px;border-radius:8px;background:rgba(30,45,61,0.8);border:1px solid var(--border);color:var(--fg);transition:all .2s;cursor:default}
 .skill-tag:hover{background:rgba(59,142,243,0.15);border-color:rgba(59,142,243,0.4);color:var(--primary);transform:scale(1.05)}
 
 /* EDUCATION */
@@ -442,7 +442,7 @@ document.querySelectorAll('.fi,.fi-l').forEach(el=>io.observe(el));
 
 /* THEME */
 let dark=true;
-function toggleTheme(){dark=!dark;const r=document.documentElement.style;if(!dark){r.setProperty('--bg','#f0f4ff');r.setProperty('--card','#ffffff');r.setProperty('--border','#d1dce8');r.setProperty('--fg','#0f172a');r.setProperty('--fg2','#334155');r.setProperty('--fg3','#64748b');document.body.style.background='#f0f4ff';document.querySelector('.nav-theme').textContent='🌙 Dark'}else{r.setProperty('--bg','#0d1117');r.setProperty('--card','#0f1823');r.setProperty('--border','#1e2d3d');r.setProperty('--fg','#f0f4ff');r.setProperty('--fg2','#94a3b8');r.setProperty('--fg3','#64748b');document.body.style.background='#0d1117';document.querySelector('.nav-theme').textContent='☀ Light'}}
+function toggleTheme(){dark=!dark;const r=document.documentElement.style;if(!dark){r.setProperty('--bg','#f0f4ff');r.setProperty('--card','#ffffff');r.setProperty('--border','#d1dce8');r.setProperty('--fg','#0f172a');r.setProperty('--fg2','#334155');r.setProperty('--fg3','#64748b');document.body.style.background='#f0f4ff';document.querySelectorAll('.glass').forEach(el=>el.style.background='rgba(255,255,255,0.85)');document.querySelectorAll('.skill-tag').forEach(el=>el.style.background='rgba(210,220,235,0.8)');document.querySelector('.nav-theme').textContent='🌙 Dark'}else{r.setProperty('--bg','#0d1117');r.setProperty('--card','#0f1823');r.setProperty('--border','#1e2d3d');r.setProperty('--fg','#f0f4ff');r.setProperty('--fg2','#94a3b8');r.setProperty('--fg3','#64748b');document.body.style.background='#0d1117';document.querySelectorAll('.glass').forEach(el=>el.style.background='');document.querySelectorAll('.skill-tag').forEach(el=>el.style.background='');document.querySelector('.nav-theme').textContent='☀ Light'}}
 </script>
 </body>
 </html>
