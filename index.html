@@ -79,10 +79,11 @@ section{padding:5rem 0}
 .gh-link:hover{background:rgba(59,142,243,0.1)}
 
 /* CAROUSEL */
-.carousel-wrap{position:relative;display:flex;align-items:center;gap:1rem}
-.carousel-viewport{overflow:hidden;flex:1;border-radius:var(--radius)}
-.carousel-track{display:flex;gap:1.25rem;transition:transform .45s cubic-bezier(.4,0,.2,1)}
-.car-card{min-width:520px;max-width:520px;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.carousel-wrap{position:relative;display:flex;align-items:center;gap:0;margin:0 -2rem}
+.carousel-viewport{overflow:hidden;flex:1;padding:1rem 0}
+.carousel-track{display:flex;gap:1.5rem;transition:transform .45s cubic-bezier(.4,0,.2,1);padding:0 2rem}
+.car-card{min-width:calc(60vw);max-width:calc(60vw);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;opacity:0.5;transform:scale(0.95);transition:opacity .3s,transform .3s}
+.car-card.active-card{opacity:1;transform:scale(1)}
 .car-img{height:280px;padding:1.5rem;font-family:'Courier New',monospace;font-size:12px;display:flex;align-items:flex-start;position:relative;overflow:hidden}
 .car-img-content{width:100%;z-index:1}
 .code-line{color:#e2e8f0;line-height:1.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -586,8 +587,8 @@ const track=document.getElementById('carouselTrack');
 const cards=document.querySelectorAll('.car-card');
 const dotsEl=document.getElementById('carDots');
 let cur=0;
-cards.forEach((_,i)=>{const d=document.createElement('div');d.className='car-dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d)});
-function goTo(i){cur=Math.max(0,Math.min(i,cards.length-1));const w=cards[0].offsetWidth+20;track.style.transform=`translateX(-${cur*w}px)`;document.querySelectorAll('.car-dot').forEach((d,j)=>d.classList.toggle('active',j===cur))}
+cards.forEach((_,i)=>{const d=document.createElement('div');d.className='car-dot'+(i===0?' active':'');d.onclick=()=>goTo(i);dotsEl.appendChild(d)});cards[0].classList.add('active-card');
+function goTo(i){cur=Math.max(0,Math.min(i,cards.length-1));const w=cards[0].offsetWidth+24;track.style.transform=`translateX(-${cur*w}px)`;cards.forEach((c,j)=>c.classList.toggle('active-card',j===cur));document.querySelectorAll('.car-dot').forEach((d,j)=>d.classList.toggle('active',j===cur))}
 function moveCarousel(dir){goTo(cur+dir)}
 window.addEventListener('resize',()=>goTo(cur));
 
