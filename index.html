@@ -510,29 +510,35 @@ function frame(){ctx.clearRect(0,0,W,H);const g=ctx.createRadialGradient(W/2,H/2
 frame();
 
 /* TYPEWRITER */
-const roles=['Energy Finance','A&D Analytics','Upstream M&A','Equity Research','Reservoir Economics'];
+const roles=['Petroleum Engineer','A&D Analyst','Reservoir Economics','Upstream Finance'];
 let ri=0,ci=0,del=false;
 const twEl=document.getElementById('tw-line');
+const twCursor=document.querySelector('.tw-cursor');
 function typeStep(){
   const w=roles[ri];
   if(!del){
-    ci++;twEl.textContent=w.slice(0,ci);
-    document.querySelector('.tw-cursor').style.animation='none';
+    ci++;
+    twEl.textContent=w.slice(0,ci);
+    if(twCursor)twCursor.style.animation='none';
     if(ci===w.length){
       del=true;
-      document.querySelector('.tw-cursor').style.animation='blink .7s infinite';
-      setTimeout(typeStep,1800);return;
+      if(twCursor)twCursor.style.animation='blink .7s infinite';
+      setTimeout(typeStep,1800);
+      return;
     }
   } else {
-    ci--;twEl.textContent=w.slice(0,ci);
-    document.querySelector('.tw-cursor').style.animation='none';
-    if(ci===0){del=false;ri=(ri+1)%roles.length;
-      document.querySelector('.tw-cursor').style.animation='blink .7s infinite';
+    ci--;
+    twEl.textContent=w.slice(0,ci);
+    if(twCursor)twCursor.style.animation='none';
+    if(ci===0){
+      del=false;
+      ri=(ri+1)%roles.length;
     }
   }
   setTimeout(typeStep,del?55:90);
 }
-
+setTimeout(typeStep,1200);
+  
 /* FADE IN */
 const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fi,.fi-l').forEach(el=>io.observe(el));
